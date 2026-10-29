@@ -2,12 +2,11 @@ import math
 import random
 import time
 
-TOL = 1e-9  # tolerância relativa para comparar números de ponto flutuante
+TOL = 1e-9  
 
 
-# =====================================================================
-# PARTE 0 - Ordens 1 e 2 (fórmulas diretas)
-# =====================================================================
+
+#  Ordens 1 e 2 
 def determinante_12(A):
     """Ordem 1: det = a.  Ordem 2: det = a*d - b*c."""
     if len(A) == 1:
@@ -65,9 +64,7 @@ def sarrus_3x3(A, mostrar_passos=True):
     return det
 
 
-# =====================================================================
-# PARTE 1 - Ordem n qualquer (eliminação de Gauss com pivotamento parcial)
-# =====================================================================
+# Ordem n qualquer (eliminação de Gauss com pivotamento parcial)
 def _tolerancia(A):
     """Tolerância de singularidade proporcional à magnitude da matriz."""
     maior = max((abs(x) for linha in A for x in linha), default=1.0)
